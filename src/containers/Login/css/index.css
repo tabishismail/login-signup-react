@@ -5,7 +5,6 @@
     width: 40%;
     background-color: #f5f8fc;
     text-align: center;
-    height: 200px;
     margin: 5% auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -24,6 +23,7 @@
     margin-bottom: 20px !important;
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root{
-    width: 80%;
+    width: 40%;
     background-color: #1b456f !important;
+    margin: 5px 5px !important;
 }

@@ -3,6 +3,7 @@ import { Container,Row,Col } from "react-bootstrap";
 import {MyAppBar, Input,BasicButtons} from "../../components"
 import "./css/index.css"
 
+
 let Login = () => {
     return (
         <Container fluid>
@@ -12,10 +13,13 @@ let Login = () => {
             </Row>
             <Row>
                 <Col className="main">
-                    <div className="justify-content-center mt-auto">
+                    <div className="justify-content-around mt-auto">
                     <Input type="email" className="myInput" Label="Email" title="email" />
                     <Input type="password" className="myInput" Label="Password" title="password" />
+                    
+                   
                     <BasicButtons title="Login"/>
+                    <BasicButtons title="Sign Up"/>
 
                     </div>
 
