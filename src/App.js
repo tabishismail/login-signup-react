@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import { Login } from './containers';
+import AppRouter from "../src/confiq/Router"
 
 
 
 function App() {
   return (
-    <Login/>
+    <AppRouter/>
   );
 }
 

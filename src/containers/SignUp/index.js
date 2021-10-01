@@ -1,20 +1,26 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Formik } from 'formik';
 import { Container, Row, Col } from "react-bootstrap";
 import { MyAppBar, Input, BasicButtons } from "../../components"
-import { Link,useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { createUserWithEmailAndPassword, auth } from '../../confiq/Firebase';
 import "./css/index.css"
+import Swal from "sweetalert2"
 
 
 let SignUp = () => {
     const history = useHistory();
     const register = (values) => {
-        let email=values.email;
-        let password=values.password;
-        createUserWithEmailAndPassword(auth,email,password )
+        let email = values.email;
+        let password = values.password;
+        createUserWithEmailAndPassword(auth, email, password)
             .then((res) => {
                 // setLoading(false)
+                Swal.fire(
+                    'Registration Complete!',
+                    'User as been register successfully!',
+                    'success'
+                )
                 console.log("agaya===>", res)
                 history.push('/')
             })
@@ -46,7 +52,7 @@ let SignUp = () => {
                             else if (!values.email) {
                                 errors.email = 'Required';
                             }
-                             else if (
+                            else if (
                                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                             ) {
                                 errors.email = 'Invalid email address';
@@ -79,7 +85,7 @@ let SignUp = () => {
                         }) => (
                             <form onSubmit={handleSubmit}>
                                 <Input
-                                error={errors.firstName}
+                                    error={errors.firstName}
                                     type="text"
                                     label="First Name"
                                     name="firstName"
@@ -88,7 +94,7 @@ let SignUp = () => {
                                     onBlur={handleBlur}
                                     value={values.firstName}
                                 />
-                                
+
                                 <Input
                                     type="text"
                                     error={errors.lastName}
@@ -99,9 +105,9 @@ let SignUp = () => {
                                     onBlur={handleBlur}
                                     value={values.lastName}
                                 />
-                                
+
                                 <Input
-                                error={errors.email}
+                                    error={errors.email}
                                     type="email"
                                     helperText={errors.email}
                                     label="Email"
@@ -110,7 +116,7 @@ let SignUp = () => {
                                     onBlur={handleBlur}
                                     value={values.email}
                                 />
-                                
+
                                 <Input
                                     type="password"
                                     error={errors.password}
@@ -121,7 +127,7 @@ let SignUp = () => {
                                     onBlur={handleBlur}
                                     value={values.password}
                                 />
-                               
+
                                 <div className="myBtn">
                                     <BasicButtons type="submit" disabled={isSubmitting}>Register</BasicButtons>
                                 </div>

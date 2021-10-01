@@ -2,8 +2,17 @@ import * as React from 'react';
 
 import TextField from '@mui/material/TextField';
 
-export default function Input({Label,type}) {
+export default function Input({ error, label, type, value, name, onChange, onBlur }) {
   return (
-      <TextField id="outlined-basic" type={type} label={Label} variant="outlined" />
+    <TextField id={error ? "outlined-error-helper-text": "outlined-basic"}
+      name={name}
+      error={error}
+      onBlur={onBlur}
+      onChange={onChange}
+      value={value}
+      type={type}
+      label={label}
+      helperText={error}
+      variant="outlined" />
   );
 }

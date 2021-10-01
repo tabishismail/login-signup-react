@@ -9,9 +9,8 @@ import {
       return(
           <Router>
               <Switch>
-                  <Route path="/" component={Login}/>
-                  <Route path="/signup" component={SignUp}/>
-                      
+                  <Route exact path="/" component={Login}/>
+                  <Route exact path="/signup" component={SignUp}/>
               </Switch>
           </Router>
       )

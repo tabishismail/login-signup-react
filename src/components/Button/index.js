@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 
-export default function BasicButtons({title}) {
+export default function BasicButtons({type, fullWidth,children}) {
     return (
-        <Button variant="contained">{title}</Button>
+        <Button fullWidth={fullWidth} type={type} variant="contained">{children}</Button>
     );
 }
